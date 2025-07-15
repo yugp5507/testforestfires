@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Forest Fire Weather Index Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="🔥" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="fire-icon">🔥</div>
+        <h1>Forest Fire Weather Index Prediction</h1>
+        
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <div class="form-group">
+                <input type="text" name="Temperature" placeholder="Temperature (°C)" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="RH" placeholder="Relative Humidity (%)" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="Ws" placeholder="Wind Speed (km/h)" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="Rain" placeholder="Rain (mm)" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="FFMC" placeholder="Fine Fuel Moisture Code" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="DMC" placeholder="Duff Moisture Code" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="ISI" placeholder="Initial Spread Index" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="Classes" placeholder="Classes (0 or 1)" required="required" />
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="Region" placeholder="Region (0 or 1)" required="required" />
+            </div>
+            
+            <button type="submit" class="btn">🔥 Predict Fire Weather Index</button>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            🌡️ The FWI prediction is: <strong>{{ result }}</strong>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Forest Fire Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="🔥" type="image/x-icon">
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="fire-icon">🌲🔥</div>
+        <h1>Welcome To Algerian Forest Fire Prediction System</h1>
+        
+        <p class="welcome-description">
+            Our advanced machine learning system helps predict Forest Fire Weather Index (FWI) 
+            for the Algerian forests using meteorological data. Get accurate predictions to help 
+            prevent and manage forest fires effectively.
+        </p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🌡️ Weather Analysis</h3>
+                <p>Analyze temperature, humidity, wind speed and rainfall data</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🔥 Fire Risk Assessment</h3>
+                <p>Evaluate FFMC, DMC, and ISI indices for comprehensive fire risk</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🎯 ML Predictions</h3>
+                <p>Get accurate FWI predictions using trained machine learning models</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🌍 Regional Coverage</h3>
+                <p>Specialized predictions for different Algerian forest regions</p>
+            </div>
+        </div>
+        
+        <a href="{{ url_for('home') }}" class="navigate-btn">
+            🔥 Start Prediction
+        </a>
+    </div>
+</body>
+</html>
